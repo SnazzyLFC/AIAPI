@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Repository.IRepo;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Web;
 
 namespace Repository.Repo
 {
-    public class Context : IdentityDbContext<User>
+    public class Context : IdentityDbContext<User>, IDbContext
     {
         public Context()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -25,6 +26,8 @@ namespace Repository.Repo
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Order>()
                 .HasMany<Product>(p => p.Products)
                 .WithOptional(o => o.Order)

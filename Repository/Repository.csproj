@@ -126,13 +126,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepo\IDbContext.cs" />
+    <Compile Include="Migrations\201703071522181_Initial.cs" />
+    <Compile Include="Migrations\201703071522181_Initial.Designer.cs">
+      <DependentUpon>201703071522181_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\Context.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703071522181_Initial.resx">
+      <DependentUpon>201703071522181_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

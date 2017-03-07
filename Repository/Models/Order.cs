@@ -4,7 +4,6 @@ namespace Repository.Models
 {
     public class Order
     {
-
         public Order()
         {
             Products = new List<Product>();
